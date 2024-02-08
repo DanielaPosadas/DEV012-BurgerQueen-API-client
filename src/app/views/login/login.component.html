@@ -1,0 +1,31 @@
+<div class="loginContainer">
+    <div class="title">
+        BURGER QUEEN
+    </div>
+    <div class='formContainer'>
+        <form [formGroup]="formLogin" (submit)="onSubmit()">
+            <div class="form-group">
+              <label for="input user">Ingresar usuario</label>
+              <input type="email" class="form-control" id="input user" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+            </div>
+            <div *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">
+                <p class="text error">Email inválido.</p>
+            </div>
+            <div class="form-group">
+              <label for="input password">Ingresar contraseña</label>
+              <input type="password" class="form-control" id="input password" placeholder="Password" formControlName="password">
+            </div>
+            <div *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">
+                <p class="text error">Contraseña inválida.</p>
+            </div>
+            <div *ngIf="isInvalidMessage">
+                <p class="text error">{{errorMessage}}</p>
+            </div>
+            <div class="buttonContainer">
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </div>
+          </form>
+        </div>
+</div>
+
+
