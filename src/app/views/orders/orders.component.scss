@@ -1,0 +1,273 @@
+@import '/src/variables.scss';
+
+.btn {
+    font-family: $secondary-font;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    background-color: $burgerQueen-color4;
+    width: 200px;
+    border-radius: 10px;
+    margin: 20px 0 0 28px;
+    cursor: pointer;
+}
+
+.btn-order {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: 430px;
+}
+
+.clicked {
+    background-color: $burgerQueen-color2;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+}
+
+.generalContainer {
+    display: flex;
+}
+
+.productsContainer {
+    display: grid;
+    grid-template-columns: 270px 270px;
+    grid-template-rows: auto;
+    row-gap: 60px;
+    column-gap: 60px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 880px;
+}
+
+.hamburgerContainer {
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: auto;
+    row-gap: 60px;
+    column-gap: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 880px;
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.beveragesContainer {
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: auto;
+    row-gap: 60px;
+    column-gap: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 880px;
+    height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidesContainer {
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: auto;
+    row-gap: 60px;
+    column-gap: 60px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 880px;
+}
+
+.orderContainer {
+    display: grid;
+    position: fixed;
+    margin-left: 950px;
+    width: 450px;
+    height: 450px;
+    background-color: $burgerQueen-color4;
+    border-radius: 5px;
+}
+
+.orderResume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $burgerQueen-color2;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+    font-size: 18px;
+    font-weight: 600;
+    height: 40px;
+    width: 450px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.Name {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 5px 0px 5px 30px;
+    margin-top: 50px;
+    margin-left: 25px;
+    border-radius: 5px;
+    background-color: $burgerQueen-color2;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+    font-size: 18px;
+    width: 400px;
+}
+
+.nameCustomer {
+    display: flex;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+input {
+    display: flex;
+    text-align: center;
+    font-family: $secondary-font;
+    font-size: 17px;
+    width: 425px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: $burgerQueen-color4;
+}
+
+.send {
+    width: 100px;
+    margin-left: 10px;
+    font-family: $secondary-font;
+    font-weight: 600;
+    font-size: 18px;
+    color: $burgerQueen-color3;
+    border-radius: 5px;
+    background-color: $burgerQueen-color2;
+}
+
+.information {
+    position: absolute;
+    display: flex;
+    font-family: $secondary-font;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.quantity {
+    margin-left: 28px;
+}
+
+.description {
+    margin-left: 45px;
+}
+
+.Product{
+    margin-left: 30px;
+    margin-right: 40px;
+    margin-top: 20px;
+}
+
+.addProductContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    font-family: $secondary-font;
+    margin-top: 120px;
+    margin-left: 60px;
+    width: 400px;
+    height: 100px;
+}
+
+.addProduct {
+    display: flex;
+}
+
+.deleteProductOrder {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 300px;
+    margin-top: 16px;
+}
+
+.deleteButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    background-color: #202020;
+    font-family: $secondary-font;
+    font-size: 19px;
+    color: $burgerQueen-color3;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: $burgerQueen-color2;
+}
+
+.totalOrder {
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    margin-top: 390px;
+    margin-left: 25px;
+    width: 250px;
+    height: 35px;
+    padding: 5px 0px 5px 30px;
+    border-radius: 5px 0 0 5px;
+    background-color: $burgerQueen-color2;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+    font-weight: 600;
+}
+
+.sendToKitchen {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 390px;
+}
+
+.sendChef {
+    width: 130px;
+    height: 35px;
+    border-radius: 0 5px 5px 0;
+    background-color: $burgerQueen-color2;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+    font-size: 15px;
+    cursor: pointer;
+}
+.sendChef:hover {
+    background-color: $burgerQueen-color4;
+    color: #000000;
+}
+
+.missingName {
+    display: flex;
+    margin-left: 40px;
+}
+
+.message {
+    font-family: $secondary-font;
+    font-weight: 400;
+    color: red;
+    font-size: 18px;
+    margin-left: 95px;
+}
