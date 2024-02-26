@@ -4,15 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './views/login/login.module';
-import { HeaderComponent } from './core/header/header/header.component';
-import { FooterComponent } from './core/footer/footer/footer.component';
 import { OrdersModule } from './views/orders/orders.module';
+import { MealComponent } from './core/menu/meal/meal.component';
+import { BeveragesComponent } from './core/menu/beverages/beverages.component';
+import { SidesComponent } from './core/menu/sides/sides.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,

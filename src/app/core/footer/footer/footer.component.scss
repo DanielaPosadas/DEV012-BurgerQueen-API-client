@@ -1,0 +1,14 @@
+@import '/src/variables.scss';
+
+.footer {
+display: flex;
+justify-content: center;
+}
+
+p{
+    position: absolute;
+    bottom: 10px;
+    font-family: $secondary-font;
+    color: $burgerQueen-color3;
+    font-size: 15px;
+}

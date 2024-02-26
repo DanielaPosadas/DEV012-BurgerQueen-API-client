@@ -1,0 +1,13 @@
+<div class="product">
+    <div class="cardProduct">
+        <img src="{{menuProducts?.image}}">
+        <h2>{{menuProducts?.name}}</h2>
+        <p>${{menuProducts?.price}}</p>
+
+        <div class="addProduct">
+            <button (click)="quitProduct()">-</button>
+            <p class="numFood">{{sidesProduct}}</p>
+            <button (click)="addProduct(menuProducts?.id ?? 0, menuProducts?.name ?? '', menuProducts?.price ?? 0)">+</button>
+        </div>
+    </div>
+</div>

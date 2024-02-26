@@ -1,1 +1,59 @@
-<p>orders works!</p>
+<app-header></app-header>
+<button type="button" class="btn" (click)="menuBreakfast()" [ngClass]="{'clicked': showMenuBreakfast}">Desayuno</button>
+<button type="button" class="btn" (click)="menuHamburger()" [ngClass]="{'clicked': showMenuHamburger}">Hamburguesas</button>
+<button type="button" class="btn" (click)="menuBeverages()" [ngClass]="{'clicked': showMenuBeverages}">Bebidas</button>
+<button type="button" class="btn" (click)="menuSides()" [ngClass]="{'clicked': showMenuSides}">Acompañamientos</button>
+<button type="button" class="btn btn-order" (click)="orderResume()">C:</button>
+
+
+<div class="nameCustomer">
+    <input type="text" id="inputName" placeholder="Ingresa nombre/Número de mesa">
+    <button class="send" (click)="getCustomerName()">Enviar</button>
+</div>
+<div class="missingName">
+    <p class="message" (click)="sendOrderChef()">{{message}}</p>
+</div>
+
+<div class="generalContainer">
+    <div class="productsContainer" *ngIf="showMenuBreakfast">
+        <app-breakfast #Breakfast *ngFor="let product of AllBreakfastProducts" [menuProducts] = product (getInfoProduct)="getInfoProduct($event.id, $event.name, $event.price, $event.quantity)" (deleteProduct)="deleteProduct($event.id, $event.quantity)"></app-breakfast>
+    </div>
+    
+    <div class="hamburgerContainer" *ngIf="showMenuHamburger">
+        <app-meal #Meal *ngFor="let product of AllHamburgersProducts" [menuProducts] = product (getInfoProduct)="getInfoProduct($event.id, $event.name, $event.price, $event.quantity)" (deleteProduct)="deleteProduct($event.id, $event.quantity)"></app-meal>
+    </div>
+    
+    <div class="beveragesContainer" *ngIf="showMenuBeverages">
+        <app-beverages #Beverages *ngFor="let product of AllBeveragesProducts" [menuProducts] = product (getInfoProduct)="getInfoProduct($event.id, $event.name, $event.price, $event.quantity)" (deleteProduct)="deleteProduct($event.id, $event.quantity)"></app-beverages>
+    </div>
+    
+    <div class="sidesContainer" *ngIf="showMenuSides">
+        <app-sides #Sides *ngFor="let product of AllSidesProducts" [menuProducts] = product (getInfoProduct)="getInfoProduct($event.id, $event.name, $event.price, $event.quantity)" (deleteProduct)="deleteProduct($event.id, $event.quantity)"></app-sides>
+    </div>
+    
+    <div class="orderContainer" *ngIf="showOrderResume">
+        <p class="orderResume">Resumen de orden</p>
+        <p class="Name">Cliente: {{customerName}}</p>
+        <div class="information">
+            <p class="quantity">Cantidad</p>
+            <p class="description">Alimento</p>
+        </div>
+        <div class="totalOrder">
+            <p class="total">Total: ${{totalOrder}} </p>
+            <div class="sendToKitchen">
+                <button class="sendChef" (click)="sendOrderChef()">Enviar a cocina</button>
+            </div>
+        </div>
+        <div class="addProductContainer">
+            <div class="addProduct" *ngFor="let product of addProductToOrder">
+                <p class="Product">{{product?.quantity}}</p>
+                <p class="Product">{{product?.name}}</p>
+                <div class="deleteProductOrder">
+                    <button class="deleteButton" (click)="deleteProductWithButton(product?.id ?? 0)">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

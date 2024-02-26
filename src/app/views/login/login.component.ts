@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,7 +10,7 @@ import { APIService } from 'src/app/core/services/service.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   formLogin!: FormGroup;
   error: HttpErrorResponse | undefined;
@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
         if(userResponse.user){
           localStorage.clear();
           localStorage.setItem('accessToken', userResponse.accessToken);
+          localStorage.setItem('idUser', userResponse.user.id.toString());
           this.router.navigate(['/orders']);
+          console.log('Token: ', userResponse.user.id)
         }
       },
       error: (errorResponse) => {
@@ -67,11 +69,11 @@ export class LoginComponent implements OnInit {
     this.resetForm();
 }
 
-//Me desuscribo del observable para no seguir consumiendo recursos de la API.  
-ngOnDestroy() {
+  //Me desuscribo del observable para no seguir consumiendo recursos de la API.  
+  ngOnDestroy(): void {
   if (this.mySuscription) {
     this.mySuscription.unsubscribe();
+    }
   }
-}
 
 }
